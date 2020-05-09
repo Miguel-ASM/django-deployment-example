@@ -1,0 +1,69 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.table {
+    width: 75%
+}
+
+tbody {
+  display:block;
+  max-height:500px;
+  overflow-y:auto;
+}
+thead, tbody tr {
+  display:table;
+  width: 100%;
+  table-layout:fixed;
+}
+
+.bg {
+  background-image: url("images/background.jpe");
+  background-attachment: fixed;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.jumbotron {
+    color:white;
+}
+
+.card {
+    background-color: #05fcfe;
+}
+
+i {
+    color: black;
+    opacity:0.7;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition:0.3s;
+}
+
+i:hover {
+    opacity: 1;
+}
+
+i.fa-twitter:hover {
+    color:#77DDF6;
+}
+
+i.fa-facebook-official:hover {
+    color: #4267B2;
+}
+
+i.fa-envelope:hover {
+    opacity :0.7
+}
+
+i.fa-linkedin:hover {
+    color: #2867B2;
+}
+i.fa-github:hover {
+    color: #211F1F;
+}

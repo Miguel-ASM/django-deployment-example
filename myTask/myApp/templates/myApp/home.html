@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+{% load mytemplates %}
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <!-- link bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- link fonts awesome -->
+  <script src="https://use.fontawesome.com/8a19d087db.js"></script>
+  <!-- link my css file -->
+  <link rel="stylesheet" type="text/css" href="{% static "myApp/style.css" %}">
+</head>
+<body>
+  <!-- Container for the whole page to insert a background image -->
+  <div class="bg">
+    <div class="jumbotron bg-dark dark text-center">
+      {% if riderName %}
+      <h1>Thank you! {{ riderName|ninini }}</h1>
+      <a class="btn btn-primary" href="{% url 'myHomeView' %}" role="button">go to main page</a>
+      {% else %}
+      <h1>Welcome to the titan desert!</h1>
+      <p>Go to the registration page</p>
+      <a class="btn btn-primary" href="{% url viewName %}" role="button">Registration</a>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>

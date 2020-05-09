@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <!-- link bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- link fonts awesome -->
+  <script src="https://use.fontawesome.com/8a19d087db.js"></script>
+  <!-- link my css file -->
+  <link rel="stylesheet" type="text/css" href="{% static "myApp/style.css" %}">
+</head>
+<body>
+  <!-- Container for the whole page to insert a background image -->
+  <div class="bg">
+    <div class="jumbotron bg-dark dark">
+      <h2>User Info</h2>
+    </div>
+    <div class="container">
+      <div class="card mx-auto" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{% static img %}" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8 mt-auto">
+            <div class="card-body">
+              <h5 class="card-title">{{userName}}</h5>
+              <h6 class="card-subtitle text-muted mb-2">{{roleAsMember}}</h6>
+              <span>
+                <a href="https://twitter.com/miguel_simar"><i class="fa fa-twitter fa-lg" ></i></a>
+              </span>
+              <span>
+                <a href="https://www.linkedin.com/in/miguel-%C3%A1ngel-sim%C3%B3n-mart%C3%ADnez-0a457b18b/"><i class="fa fa-linkedin fa-lg" ></i></a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

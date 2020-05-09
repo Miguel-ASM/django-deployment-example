@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+{% load mytemplates %}
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  {% if page_title %}
+  <title>{{page_title}}</title>
+  {% else %}
+  <title>...</title>
+  {% endif %}
+  <!-- link bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- link fonts awesome -->
+  <script src="https://use.fontawesome.com/8a19d087db.js"></script>
+  <!-- link my css file -->
+  <link rel="stylesheet" type="text/css" href="{% static "myApp/style.css" %}">
+</head>
+<body class="bg">
+  <div class="jumbotron bg-dark dark py-2 text-center">
+    <h1>List of riders</h1>
+  </div>
+  <div class="container">
+    {% if riders_list %}
+    <table class="table table-light table-striped mx-auto">
+      <thead class="thead-dark">
+        <th>Rider Name</th>
+        <th>Rider Nationality</th>
+        <th>Birth Date</th>
+        <th>Bike Brand</th>
+        <th>Bike Model</th>
+      </thead>
+      <!-- loop to template all the riders -->
+
+      {% for rider in riders_list %}
+      <tr>
+        <td>{{ rider.riderName|ninini }}</td>
+        <td>{{rider.riderNationality|ninini}}</td>
+        <td>{{rider.riderBirthData}}</td>
+        <td>{{rider.bikeBrand|ninini}}</td>
+        <td>{{rider.bikeModel|ninini}}</td>
+      </tr>
+      {% endfor %}
+      {% else %}
+      <div class="alert alert-warning mx-auto text-center w-25">
+        <i class="fa fa-exclamation-circle fa-3x"></i>
+        <h5>Sorry, no riders yet.</h5>
+      </div>
+      {% endif %}
+    </table>
+  </div>
+</body>
+</html>
