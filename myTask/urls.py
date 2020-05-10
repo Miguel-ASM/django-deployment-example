@@ -1,4 +1,4 @@
-"""myApp URL Configuration
+"""myTask URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -13,14 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
-from myApp import views
+from django.contrib import admin
+from django.urls import path,include
 
 urlpatterns = [
-    path('home/',views.myHomeView,name='myHomeView'),
-    path('home/<str:riderName>',views.myHomeView,name='myHomeView'),
-    path('myView',views.myView,name='myView'),
-    path('riders_list',views.ridersView,name='riders_list'),
-    path('myCall',views.riderAPI,name='riderAPI'),
-    path('registration',views.riderSignIn,name='riderRegistration')
+    path('',include('myTask.Apps.myApp.urls')),
+    path('admin/', admin.site.urls),
 ]
